@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 246 247 250;
+  --panel: 255 255 255;
+  --borderline: 221 226 235;
+  --muted: 94 104 121;
+  --ink: 18 24 38;
+}
+
+.dark {
+  --surface: 16 20 27;
+  --panel: 25 31 41;
+  --borderline: 51 62 78;
+  --muted: 166 176 190;
+  --ink: 237 241 247;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: rgb(var(--surface));
+}
+
+body {
+  min-height: 100vh;
+  color: rgb(var(--ink));
+  background:
+    linear-gradient(180deg, rgb(var(--surface)) 0%, rgb(var(--surface)) 60%, rgba(43, 123, 140, 0.08) 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(20, 184, 166, 0.25);
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-transparent transition focus-visible:ring-teal-500/70;
+}
+
+.difficulty-easy {
+  @apply text-emerald-700 bg-emerald-500/10 dark:text-emerald-300;
+}
+
+.difficulty-medium {
+  @apply text-amber-700 bg-amber-500/10 dark:text-amber-300;
+}
+
+.difficulty-hard {
+  @apply text-rose-700 bg-rose-500/10 dark:text-rose-300;
+}
